@@ -1,0 +1,44 @@
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  height: 28px;
+  padding-inline: 0.7rem;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  line-height: 1;
+  white-space: nowrap;
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--text-secondary);
+  transition: border-color var(--dur) ease, color var(--dur) ease, background-color var(--dur) ease;
+}
+
+.mono {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.02em;
+}
+
+.accent {
+  background: var(--accent-soft);
+  border-color: color-mix(in srgb, var(--accent) 30%, transparent);
+  color: var(--accent);
+}
+
+.violet {
+  background: var(--accent-2-soft);
+  border-color: color-mix(in srgb, var(--accent-2) 30%, transparent);
+  color: var(--accent-2);
+}
+
+.success {
+  background: var(--success-soft);
+  border-color: color-mix(in srgb, var(--success) 30%, transparent);
+  color: var(--success);
+}
+
+.muted {
+  background: transparent;
+  color: var(--text-muted);
+}

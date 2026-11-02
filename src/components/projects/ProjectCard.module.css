@@ -1,0 +1,226 @@
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background: var(--bg-elevated);
+  overflow: hidden;
+  transition:
+    border-color var(--dur) ease,
+    box-shadow var(--dur) ease,
+    transform var(--dur) var(--ease-out);
+}
+
+.card:hover,
+.card:focus-within {
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+}
+
+.media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+}
+
+.art,
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 900ms var(--ease-out);
+}
+
+.card:hover .art,
+.card:hover .img {
+  transform: scale(1.045);
+}
+
+.badges {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  display: flex;
+  gap: 0.4rem;
+}
+
+.badges > * {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background: rgba(10, 10, 14, 0.55);
+  color: #e6e6ea;
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+.idx {
+  position: absolute;
+  right: 16px;
+  bottom: 12px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 1.4rem 1.4rem 1.25rem;
+}
+
+.cats {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.title {
+  margin-top: 0.6rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+.open {
+  text-align: left;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+}
+
+/* Stretch the button over the whole card */
+.open::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.open:focus-visible {
+  outline: none;
+}
+
+.open:focus-visible::after {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+  border-radius: var(--radius-lg);
+}
+
+.tagline {
+  margin-top: 0.3rem;
+  font-size: 0.92rem;
+  color: var(--text);
+  opacity: 0.85;
+}
+
+.desc {
+  margin-top: 0.75rem;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.footer {
+  margin-top: auto;
+  padding-top: 1.25rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  min-width: 0;
+}
+
+.tags li {
+  padding: 0.25rem 0.55rem;
+  border-radius: 6px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-shrink: 0;
+}
+
+.linkBtn {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  transition: color var(--dur-fast), border-color var(--dur-fast);
+}
+
+.linkBtn:hover {
+  color: var(--text);
+  border-color: var(--border-strong);
+}
+
+.arrow {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-full);
+  background: var(--surface-2);
+  color: var(--text-secondary);
+  transition: background-color var(--dur), color var(--dur), transform var(--dur) var(--ease-out);
+}
+
+.card:hover .arrow {
+  background: var(--text);
+  color: var(--bg);
+  transform: rotate(45deg);
+}
+
+@media (min-width: 1024px) {
+  .featured {
+    grid-column: span 2;
+    flex-direction: row;
+  }
+  .featured .media {
+    flex: 1.15;
+    aspect-ratio: auto;
+    min-height: 340px;
+    border-bottom: 0;
+    border-right: 1px solid var(--border);
+  }
+  .featured .body {
+    flex: 1;
+    padding: 2rem;
+  }
+  .featured .title {
+    font-size: 1.75rem;
+  }
+  .featured .desc {
+    -webkit-line-clamp: 5;
+    line-clamp: 5;
+  }
+}

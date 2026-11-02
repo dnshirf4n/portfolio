@@ -1,0 +1,168 @@
+.card {
+  position: relative;
+  padding: clamp(1.5rem, 1rem + 2vw, 2.75rem);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border);
+  background:
+    linear-gradient(var(--grid-line) 1px, transparent 1px) 0 0 / 40px 40px,
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px) 0 0 / 40px 40px,
+    var(--bg-elevated);
+  overflow: hidden;
+}
+
+.card::after {
+  content: '';
+  position: absolute;
+  inset: auto -10% -60% auto;
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(closest-side, var(--accent-soft), transparent);
+  pointer-events: none;
+}
+
+.head {
+  position: relative;
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+}
+
+.crest {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 18px;
+  background: linear-gradient(140deg, var(--accent), var(--accent-2));
+  color: #fff;
+  box-shadow: 0 10px 30px -10px var(--accent);
+}
+
+.short {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+}
+
+.institution {
+  margin-top: 0.35rem;
+  font-size: clamp(1.5rem, 1.1rem + 1.6vw, 2.25rem);
+  letter-spacing: -0.035em;
+}
+
+.programme {
+  margin-top: 0.5rem;
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.location {
+  margin-top: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.facts {
+  position: relative;
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--border);
+  overflow: hidden;
+}
+
+.fact {
+  padding: 1rem 1.2rem;
+  background: var(--bg-elevated);
+}
+
+.fact dt {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.fact dd {
+  margin: 0.45rem 0 0;
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+.lists {
+  position: relative;
+  margin-top: 2rem;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.listLabel {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.7rem;
+}
+
+.courses {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.courses li {
+  padding: 0.35rem 0.7rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  font-size: 0.85rem;
+}
+
+.achievements {
+  padding-left: 1.1rem;
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  display: grid;
+  gap: 0.35rem;
+}
+
+@media (min-width: 760px) {
+  .lists {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+  }
+}
+
+.secondary {
+  margin-top: 1rem;
+  padding-block: clamp(1.25rem, 1rem + 1vw, 1.75rem);
+}
+
+.secondary .institution {
+  font-size: clamp(1.2rem, 1rem + 0.8vw, 1.5rem);
+}
+
+.secondary .crest {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: var(--surface-2);
+  color: var(--accent);
+  box-shadow: none;
+  border: 1px solid var(--border-strong);
+}

@@ -1,0 +1,29 @@
+.btn {
+  position: fixed;
+  right: clamp(1rem, 3vw, 2rem);
+  bottom: clamp(1rem, 3vw, 2rem);
+  z-index: 40;
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: var(--radius-full);
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  color: var(--text);
+  box-shadow: var(--shadow-lg);
+  transition: border-color var(--dur), box-shadow var(--dur);
+}
+
+.btn:hover {
+  border-color: var(--accent);
+  box-shadow: var(--glow);
+}
+
+.btn svg {
+  transition: transform var(--dur) var(--ease-out);
+}
+
+.btn:hover svg {
+  transform: translateY(-2px);
+}

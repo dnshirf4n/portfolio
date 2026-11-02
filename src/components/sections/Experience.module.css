@@ -1,0 +1,134 @@
+.list {
+  display: grid;
+  gap: 1rem;
+}
+
+.card {
+  display: grid;
+  gap: 1.5rem;
+  padding: clamp(1.4rem, 1rem + 1.5vw, 2.25rem);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background:
+    radial-gradient(ellipse 40% 60% at 100% 0%, var(--accent-soft), transparent 70%),
+    var(--bg-elevated);
+}
+
+.side {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: var(--surface-2);
+  border: 1px solid var(--border-strong);
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.period {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+}
+
+.location {
+  margin-top: 0.3rem;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.title {
+  font-size: 1.35rem;
+}
+
+.company {
+  margin-top: 0.4rem;
+  font-size: 1rem;
+  color: var(--text-secondary);
+}
+
+.company a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.company a:hover {
+  color: var(--accent);
+}
+
+.summary {
+  margin-top: 1.25rem;
+  color: var(--text-secondary);
+}
+
+.main > :global(span) {
+  margin-top: 1.25rem;
+}
+
+.groups {
+  margin-top: 1.75rem;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.group {
+  display: grid;
+  gap: 0.6rem;
+  align-content: start;
+}
+
+.groupLabel {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.group .list {
+  display: grid;
+  gap: 0.4rem;
+  padding-left: 1.1rem;
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+@media (min-width: 720px) {
+  .groups {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 960px) {
+  .card {
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: 2.5rem;
+  }
+  .side {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

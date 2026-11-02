@@ -1,0 +1,84 @@
+.filters {
+  display: flex;
+  gap: 0.4rem;
+  margin-bottom: 2rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding-bottom: 2px;
+  -webkit-mask-image: linear-gradient(90deg, #000 90%, transparent);
+  mask-image: linear-gradient(90deg, #000 90%, transparent);
+}
+
+.filters::-webkit-scrollbar {
+  display: none;
+}
+
+.filter {
+  position: relative;
+  flex-shrink: 0;
+  height: 38px;
+  padding-inline: 1rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border);
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  transition: color var(--dur-fast), border-color var(--dur-fast);
+}
+
+.filter:hover {
+  color: var(--text);
+  border-color: var(--border-strong);
+}
+
+.filterActive {
+  color: var(--bg);
+  border-color: transparent;
+}
+
+.filterActive:hover {
+  color: var(--bg);
+}
+
+.filterPill {
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: var(--text);
+}
+
+.filterLabel {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.filterCount {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  opacity: 0.6;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: minmax(0, 1fr);
+  grid-auto-flow: dense;
+}
+
+@media (min-width: 720px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .filters {
+    flex-wrap: wrap;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

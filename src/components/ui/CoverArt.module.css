@@ -1,0 +1,22 @@
+.cover {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background:
+    linear-gradient(var(--grid-line) 1px, transparent 1px) 0 0 / 32px 32px,
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px) 0 0 / 32px 32px,
+    hsl(var(--hue) 30% 6%);
+}
+
+:global([data-theme='light']) .cover {
+  background:
+    linear-gradient(var(--grid-line) 1px, transparent 1px) 0 0 / 32px 32px,
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px) 0 0 / 32px 32px,
+    hsl(var(--hue) 40% 14%);
+}
+
+.cover svg {
+  width: 100%;
+  height: 100%;
+}

@@ -1,0 +1,173 @@
+.grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.card {
+  --medal: var(--accent);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: clamp(1.5rem, 1rem + 1.5vw, 2.25rem);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background:
+    radial-gradient(ellipse 60% 45% at 0% 0%, color-mix(in srgb, var(--medal) 14%, transparent), transparent 70%),
+    var(--bg-elevated);
+  overflow: hidden;
+  transition: border-color var(--dur), transform var(--dur) var(--ease-out);
+}
+
+.card:hover {
+  border-color: color-mix(in srgb, var(--medal) 40%, var(--border-strong));
+  transform: translateY(-3px);
+}
+
+.gold {
+  --medal: var(--gold);
+}
+.silver {
+  --medal: var(--silver);
+}
+.bronze {
+  --medal: var(--bronze);
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.rank {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.rankIcon {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  color: var(--medal);
+  background: color-mix(in srgb, var(--medal) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--medal) 35%, transparent);
+}
+
+.ordinal {
+  font-size: 2.6rem;
+  line-height: 1;
+  color: var(--medal);
+}
+
+.year {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.award {
+  margin-top: 2rem;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--medal);
+}
+
+.event {
+  margin-top: 0.5rem;
+  font-size: clamp(1.4rem, 1.1rem + 1vw, 1.9rem);
+  letter-spacing: -0.035em;
+}
+
+.meta {
+  margin-top: 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+}
+
+.meta dt {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.meta dd {
+  margin: 0.3rem 0 0;
+  font-size: 0.9rem;
+}
+
+.projectLink {
+  color: var(--accent);
+}
+
+.projectLink:hover {
+  text-decoration: underline;
+}
+
+.desc {
+  margin-top: 1.25rem;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.card > :global(span) {
+  margin-top: 1.25rem;
+}
+
+.cert {
+  margin-top: 1.5rem;
+}
+
+.cert img {
+  width: 100%;
+  aspect-ratio: 1.414 / 1;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+}
+
+.certPlaceholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  aspect-ratio: 2.4 / 1;
+  border-radius: var(--radius-md);
+  border: 1px dashed var(--border-strong);
+  background:
+    linear-gradient(var(--grid-line) 1px, transparent 1px) 0 0 / 20px 20px,
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px) 0 0 / 20px 20px,
+    var(--surface);
+  color: var(--text-muted);
+  font-size: 0.82rem;
+}
+
+.links {
+  margin-top: 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.88rem;
+}
+
+.links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: var(--accent);
+}
+
+@media (min-width: 860px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

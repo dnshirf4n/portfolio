@@ -1,0 +1,20 @@
+.spot {
+  position: relative;
+  isolation: isolate;
+}
+
+.spot::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), var(--accent-soft), transparent 45%);
+  opacity: 0;
+  transition: opacity var(--dur) ease;
+  pointer-events: none;
+}
+
+.spot:hover::before {
+  opacity: 1;
+}

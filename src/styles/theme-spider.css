@@ -1,0 +1,382 @@
+/* =========================================================================
+   Spider theme — red & blue, web patterns, comic-panel cards.
+   Active when <html data-style="spider"> (see src/data/theme.ts).
+   ========================================================================= */
+
+[data-style='spider'] {
+  --font-display: 'Bangers', 'Impact', system-ui, sans-serif;
+  --font-head: 'Anton', 'Impact', 'Arial Narrow', sans-serif;
+
+  --bg: #0a0c18;
+  --bg-elevated: #10142a;
+  --surface: #141936;
+  --surface-2: #1a2045;
+  --surface-hover: #1f2652;
+  --border: rgba(255, 255, 255, 0.12);
+  --border-strong: rgba(255, 255, 255, 0.22);
+  --text: #f6f6f8;
+  --text-secondary: #b9bdd3;
+  --text-muted: #7c82a6;
+  --accent: #e62429;
+  --accent-strong: #c81c22;
+  --accent-soft: rgba(230, 36, 41, 0.16);
+  --accent-2: #3d74ff;
+  --accent-2-soft: rgba(61, 116, 255, 0.16);
+  --ink: #04050b;
+  --panel-shadow: 6px 6px 0 var(--accent);
+  --panel-shadow-hover: 9px 9px 0 var(--accent-2);
+  --web: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 600 600%22%3E%3Cpath d=%22M600 0L600.0 820.0M600 0L457.6 807.5M600 0L319.5 770.5M600 0L190.0 710.1M600 0L72.9 628.2M600 0L-28.2 527.1M600 0L-110.1 410.0M600 0L-170.5 280.5M600 0L-207.5 142.4M600 0L-220.0 0.0M600.0 87.2Q593.5 74.7 584.9 85.9Q580.6 72.5 570.2 82.0Q568.3 68.0 556.4 75.5Q557.0 61.5 543.9 66.8Q547.0 53.0 533.2 56.1Q538.5 43.0 524.5 43.6Q532.0 31.7 518.0 29.8Q527.5 19.4 514.1 15.1Q525.3 6.5 512.8 0.0M600.0 174.5Q586.9 149.5 569.7 171.8Q561.2 144.9 540.3 163.9Q536.6 136.0 512.8 151.1Q513.9 122.9 487.9 133.7Q493.9 106.1 466.3 112.1Q477.1 86.1 448.9 87.2Q464.0 63.4 436.1 59.7Q455.1 38.8 428.2 30.3Q450.5 13.1 425.5 0.0M600.0 261.7Q580.4 224.2 554.6 257.7Q541.7 217.4 510.5 245.9Q504.9 204.0 469.1 226.6Q470.9 184.4 431.8 200.5Q440.9 159.1 399.5 168.2Q415.6 129.1 373.4 130.9Q396.0 95.1 354.1 89.5Q382.6 58.3 342.3 45.4Q375.8 19.6 338.3 0.0M600.0 348.9Q573.8 298.9 539.4 343.6Q522.3 289.9 480.7 327.9Q473.2 272.0 425.5 302.2Q427.9 245.8 375.7 267.3Q387.8 212.2 332.7 224.3Q354.2 172.1 297.8 174.5Q328.0 126.8 272.1 119.3Q310.1 77.7 256.4 60.6Q301.1 26.2 251.1 0.0M600.0 436.2Q567.3 373.7 524.3 429.5Q502.9 362.3 450.8 409.9Q441.5 340.0 381.9 377.7Q384.8 307.3 319.6 334.1Q334.8 265.2 265.9 280.4Q292.7 215.2 222.3 218.1Q260.0 158.5 190.1 149.2Q237.7 97.1 170.5 75.7Q226.3 32.7 163.8 0.0M600.0 523.4Q560.8 448.4 509.1 515.5Q483.5 434.8 421.0 491.8Q409.8 408.0 338.3 453.3Q341.8 368.7 263.6 401.0Q281.7 318.3 199.0 336.4Q231.3 258.2 146.7 261.7Q192.0 190.2 108.2 179.0Q165.2 116.5 84.5 90.9Q151.6 39.2 76.6 0.0M600.0 610.6Q554.2 523.2 494.0 601.4Q464.1 507.3 391.1 573.8Q378.1 475.9 294.7 528.8Q298.8 430.2 207.5 467.8Q228.7 371.3 132.2 392.5Q169.8 301.2 71.2 305.3Q124.1 221.9 26.2 208.9Q92.7 135.9 -1.4 106.0Q76.8 45.8 -10.6 0.0M600.0 697.9Q547.7 597.9 478.8 687.3Q444.7 579.7 361.3 655.8Q346.4 543.9 251.1 604.4Q255.8 491.6 151.4 534.6Q175.6 424.4 65.4 448.6Q108.4 344.2 -4.4 348.9Q56.1 253.6 -55.8 238.7Q20.3 155.3 -87.3 121.2Q2.1 52.3 -97.9 0.0M600.0 785.1Q541.2 672.6 463.7 773.2Q425.2 652.2 331.5 737.8Q314.7 611.9 207.4 679.9Q212.7 553.1 95.3 601.4Q122.6 477.4 -1.4 504.7Q46.9 387.3 -79.9 392.6Q-11.9 285.3 -137.8 268.5Q-52.2 174.8 -173.2 136.3Q-72.6 58.8 -185.1 0.0%22 fill=%22none%22 stroke=%22%23fff%22 stroke-width=%221.4%22 stroke-linecap=%22round%22/%3E%3C/svg%3E");
+  --web-full: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 800 800%22%3E%3Cpath d=%22M400 400L960.0 400.0M400 400L917.4 614.3M400 400L796.0 796.0M400 400L614.3 917.4M400 400L400.0 960.0M400 400L185.7 917.4M400 400L4.0 796.0M400 400L-117.4 614.3M400 400L-160.0 400.0M400 400L-117.4 185.7M400 400L4.0 4.0M400 400L185.7 -117.4M400 400L400.0 -160.0M400 400L614.3 -117.4M400 400L796.0 4.0M400 400L917.4 185.7M400 400L960.0 400.0M453.8 400.0Q445.4 409.0 449.7 420.6Q438.5 425.7 438.1 438.1Q425.7 438.5 420.6 449.7Q409.0 445.4 400.0 453.8Q391.0 445.4 379.4 449.7Q374.3 438.5 361.9 438.1Q361.5 425.7 350.3 420.6Q354.6 409.0 346.2 400.0Q354.6 391.0 350.3 379.4Q361.5 374.3 361.9 361.9Q374.3 361.5 379.4 350.3Q391.0 354.6 400.0 346.2Q409.0 354.6 420.6 350.3Q425.7 361.5 438.1 361.9Q438.5 374.3 449.7 379.4Q445.4 391.0 453.8 400.0M507.7 400.0Q490.8 418.1 499.5 441.2Q477.0 451.5 476.1 476.1Q451.5 477.0 441.2 499.5Q418.1 490.8 400.0 507.7Q381.9 490.8 358.8 499.5Q348.5 477.0 323.9 476.1Q323.0 451.5 300.5 441.2Q309.2 418.1 292.3 400.0Q309.2 381.9 300.5 358.8Q323.0 348.5 323.9 323.9Q348.5 323.0 358.8 300.5Q381.9 309.2 400.0 292.3Q418.1 309.2 441.2 300.5Q451.5 323.0 476.1 323.9Q477.0 348.5 499.5 358.8Q490.8 381.9 507.7 400.0M561.5 400.0Q536.3 427.1 549.2 461.8Q515.5 477.2 514.2 514.2Q477.2 515.5 461.8 549.2Q427.1 536.3 400.0 561.5Q372.9 536.3 338.2 549.2Q322.8 515.5 285.8 514.2Q284.5 477.2 250.8 461.8Q263.7 427.1 238.5 400.0Q263.7 372.9 250.8 338.2Q284.5 322.8 285.8 285.8Q322.8 284.5 338.2 250.8Q372.9 263.7 400.0 238.5Q427.1 263.7 461.8 250.8Q477.2 284.5 514.2 285.8Q515.5 322.8 549.2 338.2Q536.3 372.9 561.5 400.0M615.4 400.0Q581.7 436.1 599.0 482.4Q554.0 502.9 552.3 552.3Q502.9 554.0 482.4 599.0Q436.1 581.7 400.0 615.4Q363.9 581.7 317.6 599.0Q297.1 554.0 247.7 552.3Q246.0 502.9 201.0 482.4Q218.3 436.1 184.6 400.0Q218.3 363.9 201.0 317.6Q246.0 297.1 247.7 247.7Q297.1 246.0 317.6 201.0Q363.9 218.3 400.0 184.6Q436.1 218.3 482.4 201.0Q502.9 246.0 552.3 247.7Q554.0 297.1 599.0 317.6Q581.7 363.9 615.4 400.0M669.2 400.0Q627.1 445.2 648.7 503.0Q592.5 528.6 590.4 590.4Q528.6 592.5 503.0 648.7Q445.2 627.1 400.0 669.2Q354.8 627.1 297.0 648.7Q271.4 592.5 209.6 590.4Q207.5 528.6 151.3 503.0Q172.9 445.2 130.8 400.0Q172.9 354.8 151.3 297.0Q207.5 271.4 209.6 209.6Q271.4 207.5 297.0 151.3Q354.8 172.9 400.0 130.8Q445.2 172.9 503.0 151.3Q528.6 207.5 590.4 209.6Q592.5 271.4 648.7 297.0Q627.1 354.8 669.2 400.0M723.1 400.0Q672.5 454.2 698.5 523.6Q631.0 554.4 628.4 628.4Q554.4 631.0 523.6 698.5Q454.2 672.5 400.0 723.1Q345.8 672.5 276.4 698.5Q245.6 631.0 171.6 628.4Q169.0 554.4 101.5 523.6Q127.5 454.2 76.9 400.0Q127.5 345.8 101.5 276.4Q169.0 245.6 171.6 171.6Q245.6 169.0 276.4 101.5Q345.8 127.5 400.0 76.9Q454.2 127.5 523.6 101.5Q554.4 169.0 628.4 171.6Q631.0 245.6 698.5 276.4Q672.5 345.8 723.1 400.0M776.9 400.0Q717.9 463.2 748.2 544.2Q669.5 580.1 666.5 666.5Q580.1 669.5 544.2 748.2Q463.2 717.9 400.0 776.9Q336.8 717.9 255.8 748.2Q219.9 669.5 133.5 666.5Q130.5 580.1 51.8 544.2Q82.1 463.2 23.1 400.0Q82.1 336.8 51.8 255.8Q130.5 219.9 133.5 133.5Q219.9 130.5 255.8 51.8Q336.8 82.1 400.0 23.1Q463.2 82.1 544.2 51.8Q580.1 130.5 666.5 133.5Q669.5 219.9 748.2 255.8Q717.9 336.8 776.9 400.0M830.8 400.0Q763.3 472.3 798.0 564.8Q708.0 605.8 704.6 704.6Q605.8 708.0 564.8 798.0Q472.3 763.3 400.0 830.8Q327.7 763.3 235.2 798.0Q194.2 708.0 95.4 704.6Q92.0 605.8 2.0 564.8Q36.7 472.3 -30.8 400.0Q36.7 327.7 2.0 235.2Q92.0 194.2 95.4 95.4Q194.2 92.0 235.2 2.0Q327.7 36.7 400.0 -30.8Q472.3 36.7 564.8 2.0Q605.8 92.0 704.6 95.4Q708.0 194.2 798.0 235.2Q763.3 327.7 830.8 400.0M884.6 400.0Q808.8 481.3 847.7 585.5Q746.5 631.5 742.7 742.7Q631.5 746.5 585.5 847.7Q481.3 808.8 400.0 884.6Q318.7 808.8 214.5 847.7Q168.5 746.5 57.3 742.7Q53.5 631.5 -47.7 585.5Q-8.8 481.3 -84.6 400.0Q-8.8 318.7 -47.7 214.5Q53.5 168.5 57.3 57.3Q168.5 53.5 214.5 -47.7Q318.7 -8.8 400.0 -84.6Q481.3 -8.8 585.5 -47.7Q631.5 53.5 742.7 57.3Q746.5 168.5 847.7 214.5Q808.8 318.7 884.6 400.0M938.5 400.0Q854.2 490.3 897.5 606.1Q785.0 657.3 780.7 780.7Q657.3 785.0 606.1 897.5Q490.3 854.2 400.0 938.5Q309.7 854.2 193.9 897.5Q142.7 785.0 19.3 780.7Q15.0 657.3 -97.5 606.1Q-54.2 490.3 -138.5 400.0Q-54.2 309.7 -97.5 193.9Q15.0 142.7 19.3 19.3Q142.7 15.0 193.9 -97.5Q309.7 -54.2 400.0 -138.5Q490.3 -54.2 606.1 -97.5Q657.3 15.0 780.7 19.3Q785.0 142.7 897.5 193.9Q854.2 309.7 938.5 400.0%22 fill=%22none%22 stroke=%22%23fff%22 stroke-width=%221.2%22 stroke-linecap=%22round%22/%3E%3C/svg%3E");
+  --web-opacity: 0.09;
+  --halftone: radial-gradient(rgba(61, 116, 255, 0.22) 1.2px, transparent 1.6px);
+  --nav-bg: rgba(10, 12, 24, 0.85);
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 10px;
+}
+
+[data-style='spider'][data-theme='light'] {
+  --bg: #fbf6ea;
+  --bg-elevated: #ffffff;
+  --surface: #ffffff;
+  --surface-2: #f3ecdc;
+  --surface-hover: #efe6d2;
+  --border: rgba(10, 10, 20, 0.85);
+  --border-strong: #0b0b12;
+  --text: #0b0b12;
+  --text-secondary: #2c2f45;
+  --text-muted: #5d6180;
+  --accent: #d81f26;
+  --accent-soft: rgba(216, 31, 38, 0.1);
+  --accent-2: #1d4fd8;
+  --accent-2-soft: rgba(29, 79, 216, 0.1);
+  --ink: #0b0b12;
+  --web-opacity: 0.14;
+  --halftone: radial-gradient(rgba(216, 31, 38, 0.18) 1.2px, transparent 1.6px);
+  --nav-bg: rgba(251, 246, 234, 0.9);
+}
+
+/* ---------- Typography ---------- */
+[data-style='spider'] h1,
+[data-style='spider'] h2 {
+  font-family: var(--font-head);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.005em;
+  line-height: 1;
+}
+
+[data-style='spider'] h3 {
+  font-family: var(--font-head);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+/* Accent words: comic lettering with a blue offset "print" shadow */
+[data-style='spider'] .serif,
+[data-style='spider'] [class*='Hero-module__accent'] {
+  font-family: var(--font-display);
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  background: none;
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  color: var(--accent);
+  -webkit-text-stroke: 1.5px var(--ink);
+  paint-order: stroke fill;
+  text-shadow: 0.06em 0.06em 0 var(--accent-2);
+}
+
+[data-style='spider'] .gradient-text {
+  background: none;
+  color: var(--accent);
+}
+
+/* ---------- Page background: halftone + web ---------- */
+[data-style='spider'] body {
+  background-color: var(--bg);
+  background-image: var(--halftone);
+  background-size: 14px 14px;
+}
+
+[data-style='spider'] #top::after {
+  content: '';
+  position: absolute;
+  top: -260px;
+  left: -260px;
+  width: min(110vw, 1100px);
+  aspect-ratio: 1;
+  background: var(--web-full) no-repeat center / contain;
+  opacity: calc(var(--web-opacity) * 1.8);
+  pointer-events: none;
+  z-index: -1;
+}
+
+[data-style='spider'] #top::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: min(60vw, 700px);
+  aspect-ratio: 1;
+  background: var(--web) no-repeat top right / contain;
+  opacity: calc(var(--web-opacity) * 2.6);
+  pointer-events: none;
+  z-index: -1;
+}
+
+[data-style='spider'][data-theme='light'] #top::after,
+[data-style='spider'][data-theme='light'] #top::before,
+[data-style='spider'][data-theme='light'] #contact::before {
+  filter: invert(1);
+}
+
+[data-style='spider'] #contact::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 40px;
+  width: 900px;
+  aspect-ratio: 1;
+  translate: -50% 0;
+  background: var(--web-full) no-repeat center / contain;
+  opacity: var(--web-opacity);
+  pointer-events: none;
+  z-index: -1;
+}
+
+[data-style='spider'] [class*='Hero-module__glow'] {
+  background: radial-gradient(closest-side, var(--accent-soft), transparent 70%),
+    radial-gradient(closest-side at 20% 80%, var(--accent-2-soft), transparent 70%);
+}
+
+/* ---------- Comic-panel cards ---------- */
+[data-style='spider'] :is(
+    [class*='About-module__card'],
+    [class*='Skills-module__card'],
+    [class*='ProjectCard-module__card'],
+    [class*='Achievements-module__card'],
+    [class*='Education-module__card'],
+    [class*='Beyond-module__card'],
+    [class*='Leadership-module__content'],
+    [class*='Exploring-module__panel'],
+    [class*='Stats-module__grid'],
+    [class*='Contact-module__formCard'],
+    [class*='Hero-module__photoCard'],
+    [class*='Hero-module__interestCard'],
+    [class*='ProjectDetail-module__block']
+  ) {
+  border: 3px solid var(--ink);
+  box-shadow: var(--panel-shadow);
+  outline: 1px solid var(--border-strong);
+  outline-offset: -4px;
+}
+
+[data-style='spider'] :is(
+    [class*='About-module__card'],
+    [class*='Skills-module__card'],
+    [class*='ProjectCard-module__card'],
+    [class*='Achievements-module__card'],
+    [class*='Beyond-module__card']
+  ):hover {
+  box-shadow: var(--panel-shadow-hover);
+  transform: translate(-3px, -3px);
+}
+
+[data-style='spider'] [class*='Hero-module__photoCard'] {
+  box-shadow: 10px 10px 0 var(--accent), 10px 10px 0 3px var(--ink);
+  rotate: 1.5deg;
+}
+
+[data-style='spider'] [class*='Hero-module__interestCard'] {
+  rotate: -3deg;
+  box-shadow: 5px 5px 0 var(--accent-2);
+}
+
+/* Skill chips as comic stickers */
+[data-style='spider'] [class*='Skills-module__skill__'] {
+  border: 2px solid var(--ink);
+  background: var(--surface);
+  font-weight: 500;
+}
+
+[data-style='spider'] [class*='Skills-module__skill__']:hover {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--ink);
+}
+
+[data-style='spider'] [class*='Skills-module__icon'],
+[data-style='spider'] [class*='About-module__iconBox'] {
+  background: var(--accent);
+  color: #fff;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+}
+
+/* Stats: big comic numerals */
+[data-style='spider'] [class*='Stats-module__value'] {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 2rem + 3vw, 4.4rem);
+  letter-spacing: 0.02em;
+  background: none;
+  color: var(--accent);
+  -webkit-text-stroke: 1.5px var(--ink);
+  text-shadow: 3px 3px 0 var(--accent-2);
+}
+
+/* Section eyebrow */
+[data-style='spider'] [class*='SectionHeader-module__eyebrow'] {
+  color: var(--text);
+}
+
+[data-style='spider'] [class*='SectionHeader-module__index'] {
+  background: var(--accent);
+  color: #fff;
+  padding: 0.15rem 0.45rem;
+  border: 2px solid var(--ink);
+  font-weight: 700;
+}
+
+[data-style='spider'] [class*='SectionHeader-module__rule'] {
+  height: 3px;
+  background: var(--accent-2);
+}
+
+/* ---------- Buttons ---------- */
+[data-style='spider'] [class*='Button-module__btn'] {
+  border-radius: 6px;
+  font-family: var(--font-head);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border: 2px solid var(--ink);
+}
+
+[data-style='spider'] [class*='Button-module__primary'] {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 4px 4px 0 var(--ink);
+}
+
+[data-style='spider'] [class*='Button-module__primary']:hover {
+  background: var(--accent);
+  box-shadow: 6px 6px 0 var(--accent-2);
+  transform: translate(-2px, -2px);
+}
+
+[data-style='spider'] [class*='Button-module__secondary'] {
+  background: var(--accent-2);
+  color: #fff;
+  box-shadow: 4px 4px 0 var(--ink);
+}
+
+[data-style='spider'] [class*='Button-module__ghost'] {
+  border-color: transparent;
+}
+
+/* ---------- Navigation ---------- */
+[data-style='spider'] [class*='Navbar-module__mark'],
+[data-style='spider'] [class*='Loader-module__mark'] {
+  background: var(--accent);
+  border: 2px solid var(--ink);
+  box-shadow: 3px 3px 0 var(--accent-2);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+}
+
+[data-style='spider'] [class*='Navbar-module__pill'] {
+  background: var(--accent);
+  border-color: var(--ink);
+}
+
+[data-style='spider'] [class*='Navbar-module__link'][aria-current='true'] {
+  color: #fff;
+}
+
+[data-style='spider'] [class*='Navbar-module__cta'] {
+  background: var(--accent);
+  color: #fff;
+  border: 2px solid var(--ink);
+  border-radius: 6px;
+  font-family: var(--font-head);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 400;
+}
+
+[data-style='spider'] [class*='Projects-module__filterPill'] {
+  background: var(--accent);
+}
+
+[data-style='spider'] [class*='Projects-module__filterActive'] {
+  color: #fff;
+}
+
+/* Project cards: status chips as comic captions */
+[data-style='spider'] [class*='ProjectCard-module__badges'] > * {
+  background: #ffd23f;
+  color: #0b0b12;
+  border: 2px solid var(--ink);
+  border-radius: 3px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+}
+
+[data-style='spider'] [class*='ProjectCard-module__cats'] {
+  color: var(--accent-2);
+}
+
+/* Leadership timeline nodes */
+[data-style='spider'] [class*='Leadership-module__node'] {
+  background: var(--accent);
+  color: #fff;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+}
+
+[data-style='spider'] [class*='Leadership-module__timeline']::before {
+  width: 3px;
+  background: repeating-linear-gradient(var(--accent-2) 0 10px, transparent 10px 16px);
+}
+
+[data-style='spider'] [class*='Leadership-module__tags'] li {
+  background: var(--accent-2);
+  color: #fff;
+}
+
+/* Achievements: rank in comic lettering */
+[data-style='spider'] [class*='Achievements-module__ordinal'] {
+  font-size: 3.2rem;
+  -webkit-text-stroke: 1.5px var(--ink);
+}
+
+/* Education crest */
+[data-style='spider'] [class*='Education-module__crest'] {
+  background: var(--accent);
+  border: 3px solid var(--ink);
+  box-shadow: 4px 4px 0 var(--accent-2);
+}
+
+/* Contact form fields */
+[data-style='spider'] [class*='Contact-module__field'] input,
+[data-style='spider'] [class*='Contact-module__field'] textarea {
+  border: 2px solid var(--ink);
+  outline: 1px solid var(--border-strong);
+  outline-offset: -3px;
+}
+
+[data-style='spider'] [class*='Contact-module__channel'] {
+  border: 2px solid var(--ink);
+  box-shadow: 4px 4px 0 var(--accent-2);
+}
+
+/* Loader bar */
+[data-style='spider'] [class*='Loader-module__bar'] {
+  background: repeating-linear-gradient(90deg, var(--accent) 0 12px, var(--accent-2) 12px 24px);
+}

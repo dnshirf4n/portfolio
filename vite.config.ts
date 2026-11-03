@@ -62,6 +62,13 @@ const base = process.env.BASE_PATH ?? '/';
 export default defineConfig({
   base,
   plugins: [react(), seo(base)],
+  css: {
+    modules: {
+      // Readable class names (e.g. "Skills-module__card__x1y2z") so themes in
+      // src/styles/ can restyle components without editing each one.
+      generateScopedName: '[name]__[local]__[hash:base64:5]',
+    },
+  },
   build: {
     target: 'es2020',
     cssCodeSplit: true,
